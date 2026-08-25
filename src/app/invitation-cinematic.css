@@ -1,0 +1,133 @@
+.invitation-cinematic {
+  --background: #060504;
+  --background-elevated: #100e0c;
+  --background-muted: #181513;
+  --foreground: #f7f3ec;
+  --foreground-secondary: #b8afa3;
+  --foreground-muted: #7d756c;
+  --accent: #c9ad82;
+  --accent-champagne: #dfc498;
+  --accent-muted: #a8886a;
+  --accent-subtle: #2a231c;
+  --border: #2a2520;
+  --border-strong: #3d3530;
+  color-scheme: dark;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes invitation-ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes invitation-scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.65);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes invitation-scroll-dot {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+
+.invitation-ken-burns img {
+  animation: invitation-ken-burns 28s ease-out forwards;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+.invitation-scroll-line {
+  animation: invitation-scroll-pulse 2.4s ease-in-out infinite;
+}
+
+.invitation-scroll-dot {
+  animation: invitation-scroll-dot 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-ken-burns img {
+    animation: none !important;
+  }
+
+  .invitation-scroll-line,
+  .invitation-scroll-dot {
+    animation: none !important;
+  }
+}
+
+.invitation-letterbox::before,
+.invitation-letterbox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6vh;
+  max-height: 48px;
+  background: #000;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.invitation-letterbox::before {
+  top: 0;
+}
+
+.invitation-letterbox::after {
+  bottom: 0;
+}
+
+.invitation-gold-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-champagne),
+    transparent
+  );
+  height: 1px;
+}
+
+.invitation-carousel {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.invitation-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.invitation-enter {
+  animation: invitation-fade-in 0.8s ease forwards;
+}
+
+@keyframes invitation-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-enter {
+    animation: none;
+  }
+}
