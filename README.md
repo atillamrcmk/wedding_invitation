@@ -126,13 +126,13 @@ Her misafir için benzersiz bir davet bağlantısı oluşturulabilir.
 Örneğin:
 
 ```text
-vowa.app/w/atilla-ayse/g/7fHTKQ
+vowa.app/w/atilla-Bengü/g/7fHTKQ
 ```
 
 Misafir bağlantıyı açtığında kişisel bir karşılama görebilir:
 
 ```text
-Sevgili Ahmet & Zeynep,
+Sevgili Ahmet & Bengü,
 
 Bu özel günümüzde sizi de yanımızda görmekten mutluluk duyarız.
 ```
